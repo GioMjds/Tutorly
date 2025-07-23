@@ -25,3 +25,7 @@ PyYAML
 pinecone-client
 pinecone-plugin-interface
 RapidFuzz
+PyPDF2
+docx
+python-docx
+python-multipart
