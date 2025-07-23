@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Color Palette */
+  --color-light-cream: #f3e9dc;
+  --color-vibrant-orange: #d96f32;
+  --color-dark-orange: #c75d2c;
+  --color-sunny-yellow: #f8b259;
+
+  /* Derived Colors */
+  --color-text-dark: #2c1e0a;
+  --color-text-light: #fff9f0;
+  --color-border-light: rgba(195, 173, 147, 0.3);
+
+  /* Font Family */
+  --font-family-base: "Inter", system-ui;
+
+  /* Extend Tailwind's default theme */
+  --breakpoint-md: 768px;
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --rounded-box: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-light-cream text-text-dark min-h-screen;
+    font-family: var(--font-family-base);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold text-balance;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 ease-in-out;
+  }
+
+  .btn-primary {
+    @apply bg-vibrant-orange text-text-light shadow-lg shadow-vibrant-orange/25;
+  }
+
+  .btn-primary:hover {
+    @apply bg-dark-orange -translate-y-0.5 shadow-xl shadow-dark-orange/30;
+  }
+
+  .btn-secondary {
+    @apply bg-sunny-yellow text-text-dark border-2 border-transparent;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-transparent border-vibrant-orange;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-[var(--rounded-box)] p-6 shadow-md border border-border-light;
+  }
+
+  /* Modals */
+  .modal {
+    @apply bg-light-cream rounded-[calc(var(--rounded-box)*1.5)] p-8 max-w-md mx-auto;
+    border: 2px solid rgb(var(--color-vibrant-orange));
+    box-shadow: 0 10px 25px rgba(var(--color-dark-orange), 0.2);
+  }
+
+  /* Navigation */
+  .navbar {
+    @apply bg-white/80 backdrop-blur-sm py-4 border-b border-border-light;
+  }
+
+  /* Form Elements */
+  .input {
+    @apply bg-light-cream/50 border border-border-light rounded-lg px-4 py-3;
+  }
+
+  .input:focus {
+    @apply outline-none ring-2 ring-vibrant-orange;
+  }
+
+  /* Utility Classes */
+  .accent-border {
+    @apply border-l-4 border-vibrant-orange pl-4;
+  }
+
+  .highlight-badge {
+    @apply bg-sunny-yellow text-text-dark px-3 py-1 rounded-full text-sm font-bold;
+  }
+}
