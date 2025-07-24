@@ -4,7 +4,7 @@ import requests
 class TutorlyAI:
     def __init__(self, api_key: str = None):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
-        self.api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
+        self.api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
         if not self.api_key:
             raise ValueError("Gemini API key not found.")
         
@@ -15,11 +15,13 @@ class TutorlyAI:
             "- Focus on clarity and brevity\n"
             "- Use bullet points if possible\n"
             "- Avoid unnecessary details\n"
-            "- Highlight only the most relevant information\n\n"
+            "- Highlight only the most relevant information\n"
+            "- Respond in valid GitHub Flavored Markdown (GFM) format.\n"
+            "- Use markdown lists, headings, and formatting where appropriate.\n\n"
             "### DOCUMENT TEXT ###\n"
             "{content}\n\n"
-            "### OUTPUT ###\n"
-            "Provide your key points or summary below:\n"
+            "### OUTPUT (in markdown) ###\n"
+            "Provide your key points or summary below as markdown:\n"
         )
 
     def get_key_points(self, text: str) -> str:

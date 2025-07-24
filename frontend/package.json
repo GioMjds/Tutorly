@@ -21,6 +21,9 @@
     "@tailwindcss/vite": "^4.1.11",
     "@tanstack/svelte-query": "^5.83.0",
     "axios": "^1.10.0",
+    "snarkdown": "^2.0.0",
+    "svelte-exmarkdown": "^5.0.1",
+    "svelte-markdown": "^0.4.1",
     "tailwindcss": "^4.1.11"
   }
 }
